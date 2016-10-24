@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Microsoft.Ajax.Utilities;
 using vidly.Models;
+using vidly.ViewModel;
 
 namespace vidly.Controllers
 {
@@ -13,12 +14,28 @@ namespace vidly.Controllers
         // GET: Movies/Random
         public ActionResult Random()
         {
-            var movie = new Movie() {Name = "Shrek!"};
+            var movie = new Movie() { Name = "Shrek!" };
             //return View(movie);
             //return Content("olá mundão");
             //return HttpNotFound();
             //return new EmptyResult();
-            return RedirectToAction("Index", "Home", new {Page = 1, sortBy = "name"});
+
+            var customers = new List<Customer>
+            {
+                new Customer { Name = "Customer 1" },
+                new Customer { Name = "Customer 2" }
+            };
+
+            var viewModel = new RandomMovieViewModel()
+            {
+                Movie = movie,
+                Customers = customers
+
+            };
+
+            return View(viewModel);
+
+            //return RedirectToAction("Index", "Home", new {Page = 1, sortBy = "name"});
 
         }
 
@@ -39,9 +56,10 @@ namespace vidly.Controllers
 
         }
 
+        [Route("movies/released/{year}/{month}")]
         public ActionResult ByReleaseDate(int year, int month)
         {
-            return Content(year +"/"+ month);
+            return Content(year + "/" + month);
         }
 
     }
