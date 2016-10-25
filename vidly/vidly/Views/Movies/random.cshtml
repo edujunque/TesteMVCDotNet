@@ -1,4 +1,4 @@
-﻿@model vidly.ViewModel.RandomMovieViewModel
+﻿@model vidly.ViewModel.IndexMovieViewModel
 @{
     ViewBag.Title = "random";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -9,23 +9,26 @@
     Comentario em Views
 *@
 
-@{
-    var className = Model.Customers.Count > 0 ? "popular" : null;
-}
+@*@{
+        var className = Model.Movie.Count > 0 ? "popular" : null;
+    }*@
 
-<h2 class="@className">@Model.Movie.Name</h2>
+@*<h2 class="@className">@Model.Movie.Name</h2>*@
+<h2>Movies</h2>
 
-
-@if (@Model.Customers.Count == 0)
+@if (@Model.Movies.Count == 0)
 {
-    <p>No one has rented this movie before.</p>
+    <p>There is no movie yet!</p>
 }
 else
 {
     <ul>
-        @foreach (var customer in Model.Customers)
+        @foreach (var movies in Model.Movies)
         {
-            <li>@customer.Name</li>
+            <li>@movies.Name</li>
         }
     </ul>
 }
+
+
+

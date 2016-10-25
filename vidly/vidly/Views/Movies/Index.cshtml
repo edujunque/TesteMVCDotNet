@@ -1,0 +1,44 @@
+﻿@model vidly.ViewModel.IndexMovieViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Movies</h2>
+
+@if (@Model.Movies.Count == 0)
+{
+    <p>There is no movie yet!</p>
+}
+else
+{
+    <table>
+        <tr>
+            <th>
+                Movie Name
+            </th>
+        </tr>
+
+        @foreach (var movies in Model.Movies)
+        {
+            <tr><td>@movies.Name</td></tr>
+        }
+    </table>
+}
+
+@*<table>
+        <tr>
+            <th>
+                @Html.ActionLink("Last Name", "Index", new { sortOrder = ViewBag.NameSortParm })
+            </th>
+            <th>
+                First Name
+            </th>
+            <th>
+                @Html.ActionLink("Enrollment Date", "Index", new { sortOrder = ViewBag.DateSortParm })
+            </th>
+            <th></th>
+        </tr>
+    </table>*@
+
+
