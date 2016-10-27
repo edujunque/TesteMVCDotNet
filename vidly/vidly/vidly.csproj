@@ -203,10 +203,28 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610152059205_InitialCreate.cs" />
+    <Compile Include="Migrations\201610152059205_InitialCreate.Designer.cs">
+      <DependentUpon>201610152059205_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610272023400_addIsSubscribedToNewsletter.cs" />
+    <Compile Include="Migrations\201610272023400_addIsSubscribedToNewsletter.Designer.cs">
+      <DependentUpon>201610272023400_addIsSubscribedToNewsletter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610272056097_addMembershipType.cs" />
+    <Compile Include="Migrations\201610272056097_addMembershipType.Designer.cs">
+      <DependentUpon>201610272056097_addMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610272101072_PopulateMembershipType.cs" />
+    <Compile Include="Migrations\201610272101072_PopulateMembershipType.Designer.cs">
+      <DependentUpon>201610272101072_PopulateMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -229,6 +247,9 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Properties\PublishProfiles\73605d54-0ee0-4-231-b9ee - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\73605d54-0ee0-4-231-b9ee - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\DeployAutomatico.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -291,6 +312,20 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201610152059205_InitialCreate.resx">
+      <DependentUpon>201610152059205_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610272023400_addIsSubscribedToNewsletter.resx">
+      <DependentUpon>201610272023400_addIsSubscribedToNewsletter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610272056097_addMembershipType.resx">
+      <DependentUpon>201610272056097_addMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610272101072_PopulateMembershipType.resx">
+      <DependentUpon>201610272101072_PopulateMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
