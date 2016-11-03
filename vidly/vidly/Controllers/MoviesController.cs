@@ -6,21 +6,28 @@ using System.Web.Mvc;
 using Microsoft.Ajax.Utilities;
 using vidly.Models;
 using vidly.ViewModel;
+using System.Data.Entity;
 
 namespace vidly.Controllers
 {
     public class MoviesController : Controller
     {
+        private ApplicationDbContext _context;
+
+        public MoviesController()
+        {
+            _context = new ApplicationDbContext();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
 
         public ActionResult Index()
         {
-           
-            var movies = new List<Movie>
-            {
-                new Movie { Name = "Shrek!" },
-                new Movie { Name = "Wall-e" },
-                new Movie { Name = "Xablau!" }
-            };
+
+            var movies = _context.Movies.Include(m => m.Genre).ToList();
             var viewModel = new IndexMovieViewModel()
             {
                 Movies = movies,
@@ -69,6 +76,16 @@ namespace vidly.Controllers
         public ActionResult ByReleaseDate(int year, int month)
         {
             return Content(year + "/" + month);
+        }
+
+        [Route("movies/details/{movieId}")]
+        public ActionResult Details(int movieID)
+        {
+
+            var movies = _context.Movies.Include(m => m.Genre).SingleOrDefault(m => m.Id == movieID);
+
+            return View(movies);
+
         }
 
     }

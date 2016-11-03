@@ -8,37 +8,26 @@
 
 @if (@Model.Movies.Count == 0)
 {
-    <p>There is no movie yet!</p>
+    <p>There is no Movies!</p>
 }
 else
 {
     <table class="table table-bordered table-hover">
-        <tr>
-            <th>
-                Movie Name
-            </th>
-        </tr>
-
+        <thead>
+            <tr>
+                <th>Movie Name</th>
+                <th>Genre</th>
+            </tr>
+        </thead>
         @foreach (var movies in Model.Movies)
         {
-            <tr><td>@movies.Name</td></tr>
+            <tr>
+                <td>@Html.ActionLink(movies.Name, "Details", "Movies",  new { movieId = movies.Id }, null)</td>
+                <td>@movies.Genre.Name</td>
+            </tr>
+
         }
     </table>
 }
-
-@*<table>
-        <tr>
-            <th>
-                @Html.ActionLink("Last Name", "Index", new { sortOrder = ViewBag.NameSortParm })
-            </th>
-            <th>
-                First Name
-            </th>
-            <th>
-                @Html.ActionLink("Enrollment Date", "Index", new { sortOrder = ViewBag.DateSortParm })
-            </th>
-            <th></th>
-        </tr>
-    </table>*@
 
 

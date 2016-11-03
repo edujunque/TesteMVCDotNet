@@ -219,9 +219,42 @@
     <Compile Include="Migrations\201610272101072_PopulateMembershipType.Designer.cs">
       <DependentUpon>201610272101072_PopulateMembershipType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611031226492_ApplyDataannotationCustomerName.cs" />
+    <Compile Include="Migrations\201611031226492_ApplyDataannotationCustomerName.Designer.cs">
+      <DependentUpon>201611031226492_ApplyDataannotationCustomerName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611031406202_AddNamenMembershipType.cs" />
+    <Compile Include="Migrations\201611031406202_AddNamenMembershipType.Designer.cs">
+      <DependentUpon>201611031406202_AddNamenMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611031407018_UpdatemembershipTypename.cs" />
+    <Compile Include="Migrations\201611031407018_UpdatemembershipTypename.Designer.cs">
+      <DependentUpon>201611031407018_UpdatemembershipTypename.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611031433126_AlterTableCustomerAddBirthDate.cs" />
+    <Compile Include="Migrations\201611031433126_AlterTableCustomerAddBirthDate.Designer.cs">
+      <DependentUpon>201611031433126_AlterTableCustomerAddBirthDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611031457104_AlterTableMovieAddingDetails.cs" />
+    <Compile Include="Migrations\201611031457104_AlterTableMovieAddingDetails.Designer.cs">
+      <DependentUpon>201611031457104_AlterTableMovieAddingDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611031502276_AddgenreTable.cs" />
+    <Compile Include="Migrations\201611031502276_AddgenreTable.Designer.cs">
+      <DependentUpon>201611031502276_AddgenreTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611031510038_AddFKGenreonMovie.cs" />
+    <Compile Include="Migrations\201611031510038_AddFKGenreonMovie.Designer.cs">
+      <DependentUpon>201611031510038_AddFKGenreonMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611031511032_populateGenreDescriptions.cs" />
+    <Compile Include="Migrations\201611031511032_populateGenreDescriptions.Designer.cs">
+      <DependentUpon>201611031511032_populateGenreDescriptions.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
@@ -301,6 +334,7 @@
     <Content Include="Views\Movies\Index.cshtml" />
     <Content Include="Views\Customer\Index.cshtml" />
     <Content Include="Views\Customer\Details.cshtml" />
+    <Content Include="Views\Movies\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -325,6 +359,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610272101072_PopulateMembershipType.resx">
       <DependentUpon>201610272101072_PopulateMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611031226492_ApplyDataannotationCustomerName.resx">
+      <DependentUpon>201611031226492_ApplyDataannotationCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611031406202_AddNamenMembershipType.resx">
+      <DependentUpon>201611031406202_AddNamenMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611031407018_UpdatemembershipTypename.resx">
+      <DependentUpon>201611031407018_UpdatemembershipTypename.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611031433126_AlterTableCustomerAddBirthDate.resx">
+      <DependentUpon>201611031433126_AlterTableCustomerAddBirthDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611031457104_AlterTableMovieAddingDetails.resx">
+      <DependentUpon>201611031457104_AlterTableMovieAddingDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611031502276_AddgenreTable.resx">
+      <DependentUpon>201611031502276_AddgenreTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611031510038_AddFKGenreonMovie.resx">
+      <DependentUpon>201611031510038_AddFKGenreonMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611031511032_populateGenreDescriptions.resx">
+      <DependentUpon>201611031511032_populateGenreDescriptions.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
